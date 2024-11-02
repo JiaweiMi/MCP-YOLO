@@ -16,7 +16,7 @@ The remaining yaml files are MCP-YOLO, other model files, and the model for abla
 - [Author](#Author)
 
 
-###### **Installation Steps**
+#### Installation Steps
 
 The module folder contains py files for each module, where CA.py and SEAttention.py are the referenced attention mechanisms and SwinTransformer.py is the referenced open-source Transformer module. C2S.py, MDF.py are the modules proposed in this project.
 Before referencing the module, you need to copy the module proposed in this article to the ultralytics\nn\modules folder in the YOLOv8 source project, and add a reference to the module in tasks.py. It is also necessary to add parsing for the MDF and C2S modules in the parse_model function. In the parsing function, C2S is added directly to the parse_model function in the same place as the C2f and C3 modules if, while the MDF module needs to be resolved in the else if branch of parse_model as follows:
